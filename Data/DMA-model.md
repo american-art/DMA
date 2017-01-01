@@ -83,6 +83,7 @@ return getValue("ObjectURI")+"/object_number"
 | _ClassificationObject_ | `rdfs:label` | `crm:E55_Type1`|
 | _Copyright_ | `crm:P3_has_note` | `crm:E30_Right1`|
 | _CopyrightURI_ | `uri` | `crm:E30_Right1`|
+| _CreditLine_ | `rdf:value` | `crm:E33_Linguistic_Object1`|
 | _CreditURI_ | `uri` | `crm:E33_Linguistic_Object1`|
 | _DateURI_ | `uri` | `crm:E52_Time-Span1`|
 | _ObjectNumber_ | `rdf:value` | `crm:E42_Identifier1`|
