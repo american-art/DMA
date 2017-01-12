@@ -13,6 +13,16 @@ Literal Type: ``
 <br/>Language: ``
 <br/>isUri: `true`
 
+#### Literal Node: `http://vocab.getty.edu/aat/30008091`
+Literal Type: ``
+<br/>Language: ``
+<br/>isUri: `true`
+
+#### Literal Node: `http://vocab.getty.edu/aat/300404670`
+Literal Type: ``
+<br/>Language: ``
+<br/>isUri: `true`
+
 
 ## PyTransforms
 #### _ObjectURI_
@@ -81,6 +91,12 @@ else:
     return UM.uri_from_fields("thesauri/material/",getValue("Medium"))
 ```
 
+#### _DescriptionURI_
+From column: _ObjectNumberLabel_
+``` python
+return getValue("ObjectURI")+"/description"
+```
+
 
 ## Selections
 
@@ -98,6 +114,7 @@ else:
 | _DateEnd_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span1`|
 | _DateURI_ | `uri` | `crm:E52_Time-Span1`|
 | _Dated_ | `rdfs:label` | `crm:E52_Time-Span1`|
+| _DescriptionURI_ | `uri` | `crm:E33_Linguistic_Object2`|
 | _MaterialURI_ | `uri` | `crm:E57_Material1`|
 | _Medium_ | `skos:prefLabel` | `crm:E57_Material1`|
 | _ObjectNumber_ | `rdf:value` | `crm:E42_Identifier1`|
@@ -105,6 +122,7 @@ else:
 | _ObjectNumberURI_ | `uri` | `crm:E42_Identifier1`|
 | _ObjectURI_ | `uri` | `crm:E22_Man-Made_Object1`|
 | _ProductionURI_ | `uri` | `crm:E12_Production1`|
+| _PublicDescription_ | `rdf:value` | `crm:E33_Linguistic_Object2`|
 | _ResourceURL_ | `uri` | `foaf:Document1`|
 
 
@@ -118,8 +136,11 @@ else:
 | `crm:E22_Man-Made_Object1` | `crm:P41i_was_classified_by` | `crm:E17_Type_Assignment1`|
 | `crm:E22_Man-Made_Object1` | `crm:P104_is_subject_to` | `crm:E30_Right1`|
 | `crm:E22_Man-Made_Object1` | `crm:P67i_is_referred_to_by` | `crm:E33_Linguistic_Object1`|
+| `crm:E22_Man-Made_Object1` | `crm:P129i_is_subject_of` | `crm:E33_Linguistic_Object2`|
 | `crm:E22_Man-Made_Object1` | `crm:P48_has_preferred_identifier` | `crm:E42_Identifier1`|
 | `crm:E22_Man-Made_Object1` | `crm:P45_consists_of` | `crm:E57_Material1`|
 | `crm:E22_Man-Made_Object1` | `foaf:homepage` | `foaf:Document1`|
 | `crm:E22_Man-Made_Object1` | `crm:P2_has_type` | `crm:E55_Type1`|
 | `crm:E33_Linguistic_Object1` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300026687`|
+| `crm:E33_Linguistic_Object2` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/30008091`|
+| `crm:E33_Linguistic_Object2` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300404670`|
