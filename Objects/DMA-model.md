@@ -93,10 +93,7 @@ return getValue("ObjectURI")+"/object_number"
 #### _MaterialURI_
 From column: _ResourceURL_
 ``` python
-if AATTerm.get_aat_uri("dma",getValue("Medium")):
-    return AATTerm.get_aat_uri("dma",getValue("Medium"))
-else:
-    return UM.uri_from_fields("thesauri/material/",getValue("Medium"))
+return UM.uri_from_fields("thesauri/material/",getValue("Medium"))
 ```
 
 #### _DescriptionURI_
@@ -111,7 +108,10 @@ else:
 #### _DimensionURI_
 From column: _Medium_
 ``` python
-return getValue("ObjectURI")+"/dimension"
+if getValue("DimensionsDisplayText"):
+    return getValue("ObjectURI")+"/dimension"
+else:
+    return ""
 ```
 
 #### _Role_
@@ -132,6 +132,15 @@ From column: _Title_
 return getValue("Title")
 ```
 
+#### _ImageURLClean_
+From column: _ImageURL_
+``` python
+if getValue("ImageURL"):
+    return getValue("ImageURL")
+else:
+    return ""
+```
+
 
 ## Selections
 
@@ -143,15 +152,11 @@ return getValue("Title")
 | _ClassificationObject_ | `rdfs:label` | `crm:E55_Type1`|
 | _Copyright_ | `crm:P3_has_note` | `crm:E30_Right1`|
 | _CopyrightURI_ | `uri` | `crm:E30_Right1`|
-| _CreditLine_ | `rdf:value` | `crm:E33_Linguistic_Object1`|
 | _CreditURI_ | `uri` | `crm:E33_Linguistic_Object1`|
-| _DateBegin_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span1`|
-| _DateEnd_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span1`|
 | _DateURI_ | `uri` | `crm:E52_Time-Span1`|
-| _Dated_ | `rdfs:label` | `crm:E52_Time-Span1`|
 | _DescriptionURI_ | `uri` | `crm:E33_Linguistic_Object2`|
 | _DimensionURI_ | `uri` | `crm:E33_Linguistic_Object3`|
-| _DimensionsDisplayText_ | `rdf:value` | `crm:E33_Linguistic_Object3`|
+| _ImageURLClean_ | `uri` | `crm:E38_Image1`|
 | _MaterialURI_ | `uri` | `crm:E57_Material1`|
 | _Medium_ | `skos:prefLabel` | `crm:E57_Material1`|
 | _ObjectNumber_ | `rdf:value` | `crm:E42_Identifier1`|
@@ -159,7 +164,6 @@ return getValue("Title")
 | _ObjectNumberURI_ | `uri` | `crm:E42_Identifier1`|
 | _ObjectURI_ | `uri` | `crm:E22_Man-Made_Object1`|
 | _ProductionURI_ | `uri` | `crm:E12_Production1`|
-| _PublicDescription_ | `rdf:value` | `crm:E33_Linguistic_Object2`|
 | _ResourceURL_ | `uri` | `foaf:Document1`|
 | _Title_ | `rdf:value` | `crm:E35_Title1`|
 | _TitleLabel_ | `rdfs:label` | `crm:E22_Man-Made_Object1`|
@@ -179,6 +183,7 @@ return getValue("Title")
 | `crm:E22_Man-Made_Object1` | `crm:P129i_is_subject_of` | `crm:E33_Linguistic_Object2`|
 | `crm:E22_Man-Made_Object1` | `crm:P67i_is_referred_to_by` | `crm:E33_Linguistic_Object3`|
 | `crm:E22_Man-Made_Object1` | `crm:P102_has_title` | `crm:E35_Title1`|
+| `crm:E22_Man-Made_Object1` | `crm:P138i_has_representation` | `crm:E38_Image1`|
 | `crm:E22_Man-Made_Object1` | `crm:P48_has_preferred_identifier` | `crm:E42_Identifier1`|
 | `crm:E22_Man-Made_Object1` | `crm:P45_consists_of` | `crm:E57_Material1`|
 | `crm:E22_Man-Made_Object1` | `foaf:homepage` | `foaf:Document1`|
