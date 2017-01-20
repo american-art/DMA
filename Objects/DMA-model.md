@@ -141,12 +141,40 @@ else:
     return ""
 ```
 
+#### _ObjectUrlURI_
+From column: _PublicDescription_
+``` python
+if getValue("ResourceURL"):
+    return getValue("ResourceURL")
+else:
+    return ""
+```
+
+#### _ArtistURI_
+From column: _Role_
+``` python
+if getValue("Role") in ['Artist','Author','Engraver']:
+    return "constituent/"+SM.fingerprint_string(getValue(("DisplayName")))
+else:
+    return ""
+```
+
+#### _SubjectURI_
+From column: _Role_
+``` python
+if getValue("Role")=="Depicted individual":
+    return "constituent/"+SM.fingerprint_string(getValue("DisplayName"))
+else:
+    return ""
+```
+
 
 ## Selections
 
 ## Semantic Types
 | Column | Property | Class |
 |  ----- | -------- | ----- |
+| _ArtistURI_ | `crm:P14_carried_out_by` | `crm:E12_Production1`|
 | _Classification_ | `uri` | `crm:E55_Type1`|
 | _ClassificationAssignmentURI_ | `uri` | `crm:E17_Type_Assignment1`|
 | _ClassificationObject_ | `rdfs:label` | `crm:E55_Type1`|
@@ -168,9 +196,11 @@ else:
 | _ObjectNumberLabel_ | `rdfs:label` | `crm:E42_Identifier1`|
 | _ObjectNumberURI_ | `uri` | `crm:E42_Identifier1`|
 | _ObjectURI_ | `uri` | `crm:E22_Man-Made_Object1`|
+| _ObjectUrlURI_ | `uri` | `foaf:Document1`|
 | _ProductionURI_ | `uri` | `crm:E12_Production1`|
 | _PublicDescription_ | `rdf:value` | `crm:E33_Linguistic_Object2`|
-| _ResourceURL_ | `uri` | `foaf:Document1`|
+| _ResourceURL_ | `rdfs:label` | `foaf:Document1`|
+| _SubjectURI_ | `crm:P62_depicts` | `crm:E22_Man-Made_Object1`|
 | _Title_ | `rdf:value` | `crm:E35_Title1`|
 | _TitleLabel_ | `rdfs:label` | `crm:E22_Man-Made_Object1`|
 | _TitleURI_ | `uri` | `crm:E35_Title1`|
@@ -195,7 +225,7 @@ else:
 | `crm:E22_Man-Made_Object1` | `foaf:homepage` | `foaf:Document1`|
 | `crm:E22_Man-Made_Object1` | `crm:P2_has_type` | `crm:E55_Type1`|
 | `crm:E33_Linguistic_Object1` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300026687`|
-| `crm:E33_Linguistic_Object2` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/30008091`|
 | `crm:E33_Linguistic_Object2` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300404670`|
+| `crm:E33_Linguistic_Object2` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/30008091`|
 | `crm:E33_Linguistic_Object3` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300266036`|
 | `crm:E35_Title1` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300404670`|
