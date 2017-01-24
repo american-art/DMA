@@ -186,9 +186,13 @@ else:
 | _Copyright_ | `crm:P3_has_note` | `crm:E30_Right1`|
 | _CopyrightURI_ | `uri` | `crm:E30_Right1`|
 | _CreditURI_ | `uri` | `crm:E33_Linguistic_Object1`|
+| _DateBegin_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span1`|
+| _DateEnd_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span1`|
 | _DateURI_ | `uri` | `crm:E52_Time-Span1`|
+| _Dated_ | `rdfs:label` | `crm:E52_Time-Span1`|
 | _DescriptionURI_ | `uri` | `crm:E33_Linguistic_Object2`|
 | _DimensionURI_ | `uri` | `crm:E33_Linguistic_Object3`|
+| _DimensionsDisplayText_ | `rdf:value` | `crm:E33_Linguistic_Object3`|
 | _ImageURLClean_ | `uri` | `crm:E38_Image1`|
 | _MaterialURI_ | `uri` | `crm:E57_Material1`|
 | _Medium_ | `skos:prefLabel` | `crm:E57_Material1`|
@@ -227,7 +231,7 @@ else:
 | `crm:E22_Man-Made_Object1` | `foaf:homepage` | `foaf:Document1`|
 | `crm:E22_Man-Made_Object1` | `crm:P2_has_type` | `crm:E55_Type1`|
 | `crm:E33_Linguistic_Object1` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300026687`|
-| `crm:E33_Linguistic_Object2` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300080091`|
 | `crm:E33_Linguistic_Object2` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300404670`|
+| `crm:E33_Linguistic_Object2` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300080091`|
 | `crm:E33_Linguistic_Object3` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300266036`|
 | `crm:E35_Title1` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300404670`|
