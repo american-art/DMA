@@ -98,7 +98,7 @@ return getValue("BirthDeathDisplayDate")
 ## Semantic Types
 | Column | Property | Class |
 |  ----- | -------- | ----- |
-| _BeginDateEnd_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span1`|
+| _BirthDateEnd_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span1`|
 | _BirthDeathDisplayDate_ | `rdfs:label` | `crm:E52_Time-Span1`|
 | _BirthURI_ | `uri` | `crm:E63_Beginning_of_Existence1`|
 | _BirthYearURI_ | `uri` | `crm:E52_Time-Span1`|
@@ -126,7 +126,8 @@ return getValue("BirthDeathDisplayDate")
 | `crm:E39_Actor1` | `crm:P93i_was_taken_out_of_existence_by` | `crm:E64_End_of_Existence1`|
 | `crm:E39_Actor1` | `crm:P107i_is_current_or_former_member_of` | `crm:E74_Group1`|
 | `crm:E39_Actor1` | `crm:P131_is_identified_by` | `crm:E82_Actor_Appellation1`|
-| `crm:E55_Type1` | `skos:broadMatch` | `xsd:http://vocab.getty.edu/aat/300055147`|
+| `crm:E55_Type1` | `crm:P2_has_type` | `crm:E55_Type2`|
+| `crm:E55_Type2` | `skos:broadMatch` | `xsd:http://vocab.getty.edu/aat/300055147`|
 | `crm:E63_Beginning_of_Existence1` | `crm:P4_has_time-span` | `crm:E52_Time-Span1`|
 | `crm:E64_End_of_Existence1` | `crm:P4_has_time-span` | `crm:E52_Time-Span2`|
 | `crm:E74_Group1` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300379842`|
