@@ -185,6 +185,7 @@ else:
 | _ClassificationObject_ | `rdfs:label` | `crm:E55_Type1`|
 | _Copyright_ | `crm:P3_has_note` | `crm:E30_Right1`|
 | _CopyrightURI_ | `uri` | `crm:E30_Right1`|
+| _CreditLine_ | `rdf:value` | `crm:E33_Linguistic_Object1`|
 | _CreditURI_ | `uri` | `crm:E33_Linguistic_Object1`|
 | _DateBegin_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span1`|
 | _DateEnd_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span1`|
