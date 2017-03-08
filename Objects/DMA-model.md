@@ -174,7 +174,7 @@ else:
 #### _OwnerURI_
 From column: _Image Display Order_
 ``` python
-return "https://dma.org/"
+return "http://data.americanartcollaborative.org/dma"
 ```
 
 #### _OwnerLabel_
