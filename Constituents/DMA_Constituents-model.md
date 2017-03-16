@@ -130,6 +130,7 @@ return getValue("BirthDeathDisplayDate")
 | `crm:E39_Actor1` | `crm:P107i_is_current_or_former_member_of` | `crm:E74_Group1`|
 | `crm:E39_Actor1` | `crm:P131_is_identified_by` | `crm:E82_Actor_Appellation1`|
 | `crm:E55_Type1` | `crm:P2_has_type` | `crm:E55_Type2`|
+| `crm:E55_Type2` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300055147`|
 | `crm:E63_Beginning_of_Existence1` | `crm:P4_has_time-span` | `crm:E52_Time-Span1`|
 | `crm:E64_End_of_Existence1` | `crm:P4_has_time-span` | `crm:E52_Time-Span2`|
 | `crm:E74_Group1` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300379842`|
