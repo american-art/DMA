@@ -183,6 +183,12 @@ From column: _OwnerURI_
 return "Dallas Museum of Art"
 ```
 
+#### _Medium_clean_
+From column: _Medium_
+``` python
+return getValue("Medium").strip()
+```
+
 
 ## Selections
 
@@ -206,7 +212,7 @@ return "Dallas Museum of Art"
 | _DimensionsDisplayText_ | `rdf:value` | `crm:E33_Linguistic_Object3`|
 | _ImageURLClean_ | `uri` | `crm:E38_Image1`|
 | _MaterialURI_ | `uri` | `crm:E57_Material1`|
-| _Medium_ | `skos:prefLabel` | `crm:E57_Material1`|
+| _Medium_clean_ | `skos:prefLabel` | `crm:E57_Material1`|
 | _ObjectNumber_ | `rdf:value` | `crm:E42_Identifier1`|
 | _ObjectNumberLabel_ | `rdfs:label` | `crm:E42_Identifier1`|
 | _ObjectNumberURI_ | `uri` | `crm:E42_Identifier1`|
