@@ -242,6 +242,7 @@ return getValue("ObjectURI")+"/pref_id"
 | _ProductionURI_ | `uri` | `crm:E12_Production1`|
 | _PublicDescription_ | `rdf:value` | `crm:E33_Linguistic_Object2`|
 | _ResourceURL_ | `rdfs:label` | `foaf:Document1`|
+| _SubjectURI_ | `crm:P62_depicts` | `crm:E22_Man-Made_Object1`|
 | _Title_ | `rdf:value` | `crm:E35_Title1`|
 | _TitleLabel_ | `rdfs:label` | `crm:E22_Man-Made_Object1`|
 | _TitleURI_ | `uri` | `crm:E35_Title1`|
