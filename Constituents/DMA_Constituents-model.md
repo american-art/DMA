@@ -38,7 +38,7 @@ return getValue("DisplayName")
 #### _GenderURI_
 From column: _FirstName_
 ``` python
-return getValue("ConstituentURI")+"/gender"
+return UM.uri_from_fields("thesauri/gender/",getValue("Gender"))
 ```
 
 #### _NameURI_
@@ -50,7 +50,10 @@ return getValue("ConstituentURI")+"/name"
 #### _BirthURI_
 From column: _DimensionsDisplayText_
 ``` python
-return getValue("ConstituentURI")+"/birth"
+if getValue("ConstituentBeginDate")!="0":
+    return getValue("ConstituentURI")+"/birth"
+else:
+    return ""
 ```
 
 #### _BirthYearURI_
@@ -62,7 +65,10 @@ return getValue("BirthURI")+"/birth_year"
 #### _DeathURI_
 From column: _CreatorDispOrder_
 ``` python
-return getValue("ConstituentURI")+"/death"
+if getValue("ConstituentEndDate")!="0":
+    return getValue("ConstituentURI")+"/death"
+else:
+    return ""
 ```
 
 #### _DeathYearURI_
@@ -95,6 +101,12 @@ From column: _ConstituentEndDate_
 return getValue("BirthDeathDisplayDate")
 ```
 
+#### _GenderTypeURI_
+From column: _Gender_
+``` python
+return getValue("ConstituentURI")+"/gender_type"
+```
+
 
 ## Selections
 
@@ -114,6 +126,7 @@ return getValue("BirthDeathDisplayDate")
 | _DeathYearURI_ | `uri` | `crm:E52_Time-Span2`|
 | _DisplayName_ | `rdf:value` | `crm:E82_Actor_Appellation1`|
 | _Gender_ | `rdfs:label` | `crm:E55_Type1`|
+| _GenderTypeURI_ | `uri` | `crm:E55_Type2`|
 | _GenderURI_ | `uri` | `crm:E55_Type1`|
 | _NameLabel_ | `rdfs:label` | `crm:E39_Actor1`|
 | _NameURI_ | `uri` | `crm:E82_Actor_Appellation1`|
