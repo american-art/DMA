@@ -50,7 +50,7 @@ return getValue("ConstituentURI")+"/name"
 #### _BirthURI_
 From column: _DimensionsDisplayText_
 ``` python
-if getValue("ConstituentBeginDate")!="0":
+if getValue("ConstituentBeginDate") and getValue("ConstituentBeginDate")!="0":
     return getValue("ConstituentURI")+"/birth"
 else:
     return ""
@@ -59,13 +59,16 @@ else:
 #### _BirthYearURI_
 From column: _BirthURI_
 ``` python
-return getValue("BirthURI")+"/birth_year"
+if getValue("ConstituentBeginDate"):
+    return getValue("BirthURI")+"/birth_year"
+else:
+    return ""
 ```
 
 #### _DeathURI_
 From column: _CreatorDispOrder_
 ``` python
-if getValue("ConstituentEndDate")!="0":
+if getValue("ConstituentEndDate") and getValue("ConstituentEndDate")!="0":
     return getValue("ConstituentURI")+"/death"
 else:
     return ""
@@ -74,7 +77,10 @@ else:
 #### _DeathYearURI_
 From column: _DeathURI_
 ``` python
-return getValue("DeathURI")+"/death_year"
+if getValue("ConstituentEndDate"):
+    return getValue("DeathURI")+"/death_year"
+else:
+    return ""
 ```
 
 #### _NationalityURI_
@@ -86,19 +92,22 @@ return getValue("ConstituentURI")+"/nationality"
 #### _BirthDateEnd_
 From column: _ConstituentBeginDate_
 ``` python
-return getValue("ConstituentBeginDate")
+if getValue("ConstituentBeginDate"):
+    return getValue("ConstituentBeginDate")+"-12-31"
+else:
+    return ""
 ```
 
-#### _DeathDateBegin_
+#### _DeathDateEnd_
 From column: _ConstituentEndDate_
 ``` python
-return getValue("ConstituentEndDate")
+return getValue("ConstituentEndDate")+"-12-31"
 ```
 
 #### _DeathDisplayDate_
 From column: _ConstituentEndDate_
 ``` python
-return getValue("BirthDeathDisplayDate")
+return getValue("EndDateValid")+" to " + getValue("DeathDateEnd")
 ```
 
 #### _GenderTypeURI_
@@ -107,24 +116,50 @@ From column: _Gender_
 return getValue("ConstituentURI")+"/gender_type"
 ```
 
+#### _BeginDateValid_
+From column: _ConstituentBeginDate_
+``` python
+if getValue("ConstituentBeginDate"):
+    return getValue("ConstituentBeginDate")+"-01-01"
+else:
+    return ""
+```
+
+#### _DateLabel_
+From column: _BirthDateEnd_
+``` python
+if getValue("ConstituentBeginDate"):
+    return getValue("BeginDateValid")+" to "+getValue("BirthDateEnd")
+else:
+    return ""
+```
+
+#### _EndDateValid_
+From column: _ConstituentEndDate_
+``` python
+return getValue("ConstituentEndDate")+"-01-01"
+```
+
 
 ## Selections
 
 ## Semantic Types
 | Column | Property | Class |
 |  ----- | -------- | ----- |
+| _BeginDateValid_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span1`|
 | _BirthDateEnd_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span1`|
-| _BirthDeathDisplayDate_ | `rdfs:label` | `crm:E52_Time-Span1`|
 | _BirthURI_ | `uri` | `crm:E63_Beginning_of_Existence1`|
 | _BirthYearURI_ | `uri` | `crm:E52_Time-Span1`|
-| _ConstituentBeginDate_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span1`|
 | _ConstituentEndDate_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span2`|
 | _ConstituentURI_ | `uri` | `crm:E39_Actor1`|
-| _DeathDateBegin_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span2`|
+| _DateLabel_ | `rdfs:label` | `crm:E52_Time-Span1`|
+| _DeathDateEnd_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span2`|
+| _DeathDateEnd_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span2`|
 | _DeathDisplayDate_ | `rdfs:label` | `crm:E52_Time-Span2`|
 | _DeathURI_ | `uri` | `crm:E64_End_of_Existence1`|
 | _DeathYearURI_ | `uri` | `crm:E52_Time-Span2`|
 | _DisplayName_ | `rdf:value` | `crm:E82_Actor_Appellation1`|
+| _EndDateValid_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span2`|
 | _Gender_ | `rdfs:label` | `crm:E55_Type1`|
 | _GenderTypeURI_ | `uri` | `crm:E55_Type1`|
 | _GenderURI_ | `uri` | `crm:E55_Type2`|
