@@ -206,6 +206,33 @@ From column: _ObjectIdLabel_
 return getValue("ObjectURI")+"/pref_id"
 ```
 
+#### _DateBeginValid_
+From column: _DateBegin_
+``` python
+if getValue("DateBegin")!="0":
+    return getValue("DateBegin") + "-01-01"
+else:
+    ""
+```
+
+#### _DateEndValid_
+From column: _DateEnd_
+``` python
+if getValue("DateEnd")!="0":
+    return getValue("DateBegin") + "-01-01"
+else:
+    ""
+```
+
+#### _DateLabel_
+From column: _Dated_
+``` python
+if getValue("DateBeginValid") or getValue("DateEndValid"):
+    return getValue("DateBeginValid") + " to " + getValue("DateEndValid")
+else:
+    ""
+```
+
 
 ## Selections
 
@@ -220,10 +247,10 @@ return getValue("ObjectURI")+"/pref_id"
 | _CopyrightURI_ | `uri` | `crm:E30_Right1`|
 | _CreditLine_ | `rdf:value` | `crm:E33_Linguistic_Object1`|
 | _CreditURI_ | `uri` | `crm:E33_Linguistic_Object1`|
-| _DateBegin_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span1`|
-| _DateEnd_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span1`|
+| _DateBeginValid_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span1`|
+| _DateEndValid_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span1`|
+| _DateLabel_ | `rdfs:label` | `crm:E52_Time-Span1`|
 | _DateURI_ | `uri` | `crm:E52_Time-Span1`|
-| _Dated_ | `rdfs:label` | `crm:E52_Time-Span1`|
 | _DescriptionURI_ | `uri` | `crm:E33_Linguistic_Object2`|
 | _DimensionURI_ | `uri` | `crm:E33_Linguistic_Object3`|
 | _DimensionsDisplayText_ | `rdf:value` | `crm:E33_Linguistic_Object3`|
