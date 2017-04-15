@@ -113,7 +113,7 @@ return getValue("EndDateValid")+" to " + getValue("DeathDateEnd")
 #### _GenderTypeURI_
 From column: _Gender_
 ``` python
-return getValue("ConstituentURI")+"/gender_type"
+return "thesauri/gender_type"
 ```
 
 #### _BeginDateValid_
@@ -161,8 +161,8 @@ return getValue("ConstituentEndDate")+"-01-01"
 | _DisplayName_ | `rdf:value` | `crm:E82_Actor_Appellation1`|
 | _EndDateValid_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span2`|
 | _Gender_ | `rdfs:label` | `crm:E55_Type1`|
-| _GenderTypeURI_ | `uri` | `crm:E55_Type1`|
-| _GenderURI_ | `uri` | `crm:E55_Type2`|
+| _GenderTypeURI_ | `uri` | `crm:E55_Type2`|
+| _GenderURI_ | `uri` | `crm:E55_Type1`|
 | _NameLabel_ | `rdfs:label` | `crm:E39_Actor1`|
 | _NameURI_ | `uri` | `crm:E82_Actor_Appellation1`|
 | _Nationality_ | `rdfs:label` | `crm:E74_Group1`|
@@ -178,7 +178,7 @@ return getValue("ConstituentEndDate")+"-01-01"
 | `crm:E39_Actor1` | `crm:P107i_is_current_or_former_member_of` | `crm:E74_Group1`|
 | `crm:E39_Actor1` | `crm:P131_is_identified_by` | `crm:E82_Actor_Appellation1`|
 | `crm:E55_Type1` | `crm:P2_has_type` | `crm:E55_Type2`|
-| `crm:E55_Type2` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300055147`|
+| `crm:E55_Type2` | `skos:broadMatch` | `http://vocab.getty.edu/aat/300055147`|
 | `crm:E63_Beginning_of_Existence1` | `crm:P4_has_time-span` | `crm:E52_Time-Span1`|
 | `crm:E64_End_of_Existence1` | `crm:P4_has_time-span` | `crm:E52_Time-Span2`|
 | `crm:E74_Group1` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300379842`|
