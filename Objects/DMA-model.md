@@ -131,7 +131,7 @@ return getValue("Role")
 #### _TitleURI_
 From column: _Role_
 ``` python
-return UM.uri_from_fields("thesauri/title/",getValue("Title"))
+return UM.uri_from_fields(getValue("ObjectURI")+"/title/",getValue("Title"))
 ```
 
 #### _TitleLabel_
@@ -227,8 +227,8 @@ else:
 #### _DateLabel_
 From column: _Dated_
 ``` python
-if getValue("DateBeginValid") or getValue("DateEndValid"):
-    return getValue("DateBeginValid") + " to " + getValue("DateEndValid")
+if getValue("Dated")!="n.d.":
+    return getValue("Dated")
 else:
     ""
 ```
