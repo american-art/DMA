@@ -71,7 +71,7 @@ return getValue("ObjectURI")+"/copyright"
 #### _ProductionURI_
 From column: _DataDateStamp_
 ``` python
-if getValue("DateBegin")!="0":
+if getValue("DateBegin")!="0" or getValue("ArtistURI") or getValue("SubjectURI"):
     return getValue("ObjectURI")+"/production"
 else:
     return ""
