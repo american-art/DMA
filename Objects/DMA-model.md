@@ -68,7 +68,7 @@ From column: _ClassificationObject_
 return getValue("ObjectURI")+"/copyright"
 ```
 
-#### _ProductionURI_
+#### _NIU_
 From column: _DataDateStamp_
 ``` python
 if getValue("DateBegin")!="0" or getValue("ArtistURI") or getValue("SubjectURI"):
@@ -78,7 +78,7 @@ else:
 ```
 
 #### _DateURI_
-From column: _ProductionURI_
+From column: _NIU_
 ``` python
 if getValue("ProductionURI"):
     return getValue("ProductionURI")+"/date"
@@ -233,6 +233,15 @@ else:
     ""
 ```
 
+#### _ProductionURI1_
+From column: _DataDateStamp_
+``` python
+if getValue("DateBegin")!="0" or getValue("ArtistURI") or getValue("SubjectURI"):
+    return getValue("ObjectURI")+"/production"
+else:
+    return ""
+```
+
 
 ## Selections
 
@@ -266,7 +275,7 @@ else:
 | _ObjectUrlURI_ | `uri` | `foaf:Document1`|
 | _OwnerLabel_ | `rdfs:label` | `crm:E40_Legal_Body1`|
 | _OwnerURI_ | `uri` | `crm:E40_Legal_Body1`|
-| _ProductionURI_ | `uri` | `crm:E12_Production1`|
+| _ProductionURI1_ | `uri` | `crm:E12_Production1`|
 | _PublicDescription_ | `rdf:value` | `crm:E33_Linguistic_Object2`|
 | _ResourceURL_ | `rdfs:label` | `foaf:Document1`|
 | _SubjectURI_ | `uri` | `crm:E39_Actor2`|
