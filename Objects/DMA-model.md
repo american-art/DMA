@@ -80,7 +80,7 @@ else:
 #### _DateURI_
 From column: _NIU_
 ``` python
-if getValue("ProductionURI"):
+if getValue("DateBeginValid"):
     return getValue("ProductionURI")+"/date"
 else:
     return ""
@@ -233,7 +233,7 @@ else:
     ""
 ```
 
-#### _ProductionURI1_
+#### _ProductionURI_
 From column: _DataDateStamp_
 ``` python
 if getValue("DateBegin")!="0" or getValue("ArtistURI") or getValue("SubjectURI"):
@@ -275,7 +275,7 @@ else:
 | _ObjectUrlURI_ | `uri` | `foaf:Document1`|
 | _OwnerLabel_ | `rdfs:label` | `crm:E40_Legal_Body1`|
 | _OwnerURI_ | `uri` | `crm:E40_Legal_Body1`|
-| _ProductionURI1_ | `uri` | `crm:E12_Production1`|
+| _ProductionURI_ | `uri` | `crm:E12_Production1`|
 | _PublicDescription_ | `rdf:value` | `crm:E33_Linguistic_Object2`|
 | _ResourceURL_ | `rdfs:label` | `foaf:Document1`|
 | _SubjectURI_ | `uri` | `crm:E39_Actor2`|
