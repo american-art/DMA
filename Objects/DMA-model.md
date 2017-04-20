@@ -77,7 +77,7 @@ else:
     return ""
 ```
 
-#### _DateURI_
+#### _NIU2_
 From column: _NIU_
 ``` python
 if getValue("DateBeginValid"):
@@ -242,6 +242,24 @@ else:
     return ""
 ```
 
+#### _NIU1_
+From column: _NIU2_
+``` python
+if getValue("DateBeginValid"):
+    return getValue("ProductionURI")+"/date"
+else:
+    return ""
+```
+
+#### _TimeSpanURI_
+From column: _ProductionURI_
+``` python
+if getValue("DateBeginValid"):
+    return getValue("ProductionURI")+"/date"
+else:
+    return ""
+```
+
 
 ## Selections
 
@@ -259,7 +277,6 @@ else:
 | _DateBeginValid_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span1`|
 | _DateEndValid_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span1`|
 | _DateLabel_ | `rdfs:label` | `crm:E52_Time-Span1`|
-| _DateURI_ | `uri` | `crm:E52_Time-Span1`|
 | _DescriptionURI_ | `uri` | `crm:E33_Linguistic_Object2`|
 | _DimensionURI_ | `uri` | `crm:E33_Linguistic_Object3`|
 | _DimensionsDisplayText_ | `rdf:value` | `crm:E33_Linguistic_Object3`|
@@ -279,6 +296,7 @@ else:
 | _PublicDescription_ | `rdf:value` | `crm:E33_Linguistic_Object2`|
 | _ResourceURL_ | `rdfs:label` | `foaf:Document1`|
 | _SubjectURI_ | `uri` | `crm:E39_Actor2`|
+| _TimeSpanURI_ | `uri` | `crm:E52_Time-Span1`|
 | _Title_ | `rdf:value` | `crm:E35_Title1`|
 | _TitleLabel_ | `rdfs:label` | `crm:E22_Man-Made_Object1`|
 | _TitleURI_ | `uri` | `crm:E35_Title1`|
